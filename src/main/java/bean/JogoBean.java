@@ -77,7 +77,7 @@ public class JogoBean {
 	}
 
 	public void validateNumber(FacesContext context, UIComponent component, Object value) {
-		int number = (Integer) value;
+ 		int number = (Integer) value;
 		if (number < 1 || number > 10) {
 			FacesMessage message = new FacesMessage("Número inválido: deve ser entre 1 e 10.");
 			throw new ValidatorException(message);
@@ -96,7 +96,7 @@ public class JogoBean {
 	}
 	
 	public void verificarNumeroSorteado(Jogo jogo, int numeroSorteado) {
-	    if (numeroSorteado >= jogo.getV1() && numeroSorteado <= jogo.getV5()) {
+	    if (numeroSorteado == jogo.getV1() || numeroSorteado == jogo.getV2() || numeroSorteado == jogo.getV3() || numeroSorteado == jogo.getV4() || numeroSorteado == jogo.getV5()) {
 	        resultadoVerificacao = "sim";
 	    } else {
 	        resultadoVerificacao = "não";
